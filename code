@@ -1,0 +1,42 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int n, i, j, v[10001], unice = 0, k, ok;
+
+int main()
+{
+    ifstream fin("unice1.in");
+    ofstream fout("unice1.out");
+    
+    fin >> n;
+    
+    for(i = 1; i <= n; i++)
+    {
+        fin >> v[i];
+        
+    }
+    
+    for(i = 1; i <= n; i++)
+    {
+        for(j = 1; j <= n; j++)
+        {
+            ok = 1;
+            
+            if(v[i] == v[j] and i != j)
+            {
+                ok = 0;
+                break;
+            }
+        }
+        if(ok == 1)
+        {
+            unice ++;
+        }
+    }
+    
+    fout << unice;
+    
+
+    return 0;
+}
